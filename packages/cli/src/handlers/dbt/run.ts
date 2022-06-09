@@ -47,5 +47,8 @@ export const dbtCompileHandler = async (
     } catch (e) {
         throw new ParseError(`Failed to run dbt:\n  ${e.message}`);
     }
+    console.log('');
+    console.log('⚡️ Lightdash run...');
+    console.log('');
     await compileHandler(options);
 };

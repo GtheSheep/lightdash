@@ -6,8 +6,8 @@ import {
     ParseError,
 } from '@lightdash/common';
 import { warehouseClientFromCredentials } from '@lightdash/warehouses';
-import fetch from 'node-fetch';
 import path from 'path';
+import { getConfig } from '../config';
 import { getDbtContext } from '../dbt/context';
 import { loadManifest } from '../dbt/manifest';
 import { getModelsFromManifest } from '../dbt/models';
@@ -16,6 +16,7 @@ import {
     warehouseCredentialsFromDbtTarget,
 } from '../dbt/profile';
 import * as styles from '../styles';
+import { lightdashApi } from './dbt/apiClient';
 
 type GenerateHandlerOptions = {
     projectDir: string;
@@ -50,32 +51,22 @@ export const compileHandler = async (options: GenerateHandlerOptions) => {
         manifest.metadata.adapter_type,
         Object.values(manifest.metrics),
     );
-    console.log(`Compiled ${explores.length} explores`);
-    const url = 'http://localhost:8080';
-    const projectUuid = '3675b69e-8324-4110-bdca-059031aa8da3';
-    const response = await fetch(
-        `${url}/api/v1/projects/${projectUuid}/explores`,
-        {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                Cookie: 'connect.sid=s%3A0malJ0tAY9imAK6PBS4-TKCkMJMcl6NY.vGqKixvUL5jPXEKlJ2%2FxR325RiM6dhr5HU1jLsHMlSM',
-            },
-            body: JSON.stringify(explores),
-        },
+    console.error(`Compiled ${explores.length} explores`);
+    const config = await getConfig();
+    await lightdashApi<undefined>({
+        method: 'PUT',
+        url: `/api/v1/projects/${config.context.project}/explores`,
+        body: JSON.stringify(explores),
+    });
+    console.error('');
+    console.error(styles.success('Successfully compiled project'));
+    console.error('');
+    console.error(`${styles.bold('Preview your project:')}`);
+    console.error('');
+    console.error(
+        `      ${styles.bold(
+            `⚡️ ${config.context.serverUrl}/projects/${config.context.project}/tables`,
+        )}`,
     );
-    if (response.status === 200) {
-        console.log('');
-        console.log(styles.success('Successfully compiled project'));
-        console.log('');
-        console.log(`${styles.bold('Preview your project:')}`);
-        console.log('');
-        console.log(
-            `      ${styles.bold(
-                '⚡️ http://localhost:3000/projects/3675b69e-8324-4110-bdca-059031aa8da3/tables',
-            )}`,
-        );
-        console.log('');
-        console.log('Done 🕶');
-    }
+    console.error('');
 };

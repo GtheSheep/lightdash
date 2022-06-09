@@ -4,8 +4,12 @@ import { program } from 'commander';
 import * as os from 'os';
 import * as path from 'path';
 import { compileHandler } from './handlers/compile';
+import { getChart } from './handlers/dbt/getChart';
 import { dbtCompileHandler, dbtRunHandler } from './handlers/dbt/run';
 import { generateHandler } from './handlers/generate';
+import { login } from './handlers/login';
+import { setProject } from './handlers/setProject';
+import { updateResource } from './handlers/update';
 import * as styles from './styles';
 
 const { version: VERSION } = require('../package.json');
@@ -66,6 +70,38 @@ ${styles.bold('Examples:')}
         )}
 `,
     );
+
+// LOGIN
+program
+    .command('login <url>')
+    .description('Login to a Lightdash instance')
+    .action(login);
+
+// CONFIG
+program
+    .command('config')
+    .description('Set configuration')
+    .command('set-project')
+    .description('Interactively choose project')
+    .action(setProject);
+
+// UPDATE
+
+program
+    .command('update')
+    .description('Update a resource in the API')
+    .requiredOption('-f, --file <file>', 'Path to the resource file')
+    .action(updateResource);
+
+// GET
+
+program
+    .command('get')
+    .description('Get a resource from the API')
+    .command('chart <id>')
+    .option('-o, --output <filename>', 'output yml file')
+    .description('Get a chart by a specific id')
+    .action(getChart);
 
 const dbtProgram = program.command('dbt').description('runs dbt commands');
 
@@ -223,6 +259,7 @@ const errorHandler = (err: Error) => {
 };
 
 const successHandler = () => {
+    console.error(`Done 🕶`);
     process.exit(0);
 };
 
