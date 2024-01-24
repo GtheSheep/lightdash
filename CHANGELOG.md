@@ -1,3 +1,115 @@
+## [0.960.1](https://github.com/lightdash/lightdash/compare/0.960.0...0.960.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* datepicker different timezone ([#8705](https://github.com/lightdash/lightdash/issues/8705)) ([6dd62e8](https://github.com/lightdash/lightdash/commit/6dd62e813a738014807a8bdd9da49931223af9e5))
+
+# [0.960.0](https://github.com/lightdash/lightdash/compare/0.959.0...0.960.0) (2024-01-24)
+
+
+### Features
+
+* remove delete space from space list ([#8669](https://github.com/lightdash/lightdash/issues/8669)) ([298f357](https://github.com/lightdash/lightdash/commit/298f3573f8a767f2177c1a0005890ab5a0d65b97))
+
+# [0.959.0](https://github.com/lightdash/lightdash/compare/0.958.3...0.959.0) (2024-01-24)
+
+
+### Bug Fixes
+
+* **cli:** support dbt vars in generate command ([#8640](https://github.com/lightdash/lightdash/issues/8640)) ([509d4e1](https://github.com/lightdash/lightdash/commit/509d4e1f41e9f34e76d6f9f5138b5650bf9ea175))
+
+
+### Features
+
+* Include multiple values in metric filter ([#8693](https://github.com/lightdash/lightdash/issues/8693)) ([88d0b67](https://github.com/lightdash/lightdash/commit/88d0b671e78c6ea4ec70bfce9daf2bc7da962f41))
+
+## [0.958.3](https://github.com/lightdash/lightdash/compare/0.958.2...0.958.3) (2024-01-24)
+
+
+### Bug Fixes
+
+* show success toast on refresh dbt complete ([#8659](https://github.com/lightdash/lightdash/issues/8659)) ([bc4427f](https://github.com/lightdash/lightdash/commit/bc4427f1eaad278ea6dea69b63d181994e4a254b))
+
+## [0.958.2](https://github.com/lightdash/lightdash/compare/0.958.1...0.958.2) (2024-01-24)
+
+
+### Bug Fixes
+
+* week num chart float ([#8702](https://github.com/lightdash/lightdash/issues/8702)) ([7452aa6](https://github.com/lightdash/lightdash/commit/7452aa60ef0d6bf266b272336a0f40c55f3ce6ea))
+
+## [0.958.1](https://github.com/lightdash/lightdash/compare/0.958.0...0.958.1) (2024-01-23)
+
+
+### Bug Fixes
+
+* make save buttons consistent ([#8692](https://github.com/lightdash/lightdash/issues/8692)) ([f095b91](https://github.com/lightdash/lightdash/commit/f095b91d374f91fb67e7286b281e6011743ac9d9))
+* refetch pinned items on space mutation ([#8698](https://github.com/lightdash/lightdash/issues/8698)) ([9c7c3b2](https://github.com/lightdash/lightdash/commit/9c7c3b2a0830d71f0164329cf9b4a1d26383ee33))
+
+# [0.958.0](https://github.com/lightdash/lightdash/compare/0.957.0...0.958.0) (2024-01-23)
+
+
+### Features
+
+* users can manage their own warehouse credentials ([#8636](https://github.com/lightdash/lightdash/issues/8636)) ([555e992](https://github.com/lightdash/lightdash/commit/555e992b1542b9bab4fde083c4ab1b3a65fb9d75))
+
+# [0.957.0](https://github.com/lightdash/lightdash/compare/0.956.0...0.957.0) (2024-01-23)
+
+
+### Features
+
+* add accordion for format ([#8706](https://github.com/lightdash/lightdash/issues/8706)) ([4c79b6a](https://github.com/lightdash/lightdash/commit/4c79b6aa15c4acc8729cb9ae40219131f8f63c13))
+* granular date part options for date dimensions ([#8487](https://github.com/lightdash/lightdash/issues/8487)) ([fc033ac](https://github.com/lightdash/lightdash/commit/fc033ac4e951e39d68baae11908a2ed77cae7d81))
+
+# [0.956.0](https://github.com/lightdash/lightdash/compare/0.955.0...0.956.0) (2024-01-23)
+
+
+### Features
+
+* env variable to enable group sync ([#8695](https://github.com/lightdash/lightdash/issues/8695)) ([4fb1f8e](https://github.com/lightdash/lightdash/commit/4fb1f8e80df30f3aef204ef51abbeb8f880cc037))
+
+# [0.955.0](https://github.com/lightdash/lightdash/compare/0.954.2...0.955.0) (2024-01-23)
+
+
+### Features
+
+* **API:** user warehouse credentials ([#8696](https://github.com/lightdash/lightdash/issues/8696)) ([d144255](https://github.com/lightdash/lightdash/commit/d144255314b85bd4e6a9131b7dd8c478ce1defdc))
+
+## [0.954.2](https://github.com/lightdash/lightdash/compare/0.954.1...0.954.2) (2024-01-23)
+
+
+### Bug Fixes
+
+* Button alignment in SQLRunner ([#8699](https://github.com/lightdash/lightdash/issues/8699)) ([8a6cf41](https://github.com/lightdash/lightdash/commit/8a6cf4166b608729296c0242343afae8c5421789))
+
+## [0.954.1](https://github.com/lightdash/lightdash/compare/0.954.0...0.954.1) (2024-01-23)
+
+
+### Bug Fixes
+
+* normalize path ([#8682](https://github.com/lightdash/lightdash/issues/8682)) ([ab00e18](https://github.com/lightdash/lightdash/commit/ab00e1824e7d4f3ea2246fa26f15cde7b9f6fbb7))
+
+# [0.954.0](https://github.com/lightdash/lightdash/compare/0.953.0...0.954.0) (2024-01-22)
+
+
+### Features
+
+* expand description box in charts and dashboards ([#8639](https://github.com/lightdash/lightdash/issues/8639)) ([910dcbe](https://github.com/lightdash/lightdash/commit/910dcbe6f333e636a7533ceaedf413fddc672cc9))
+
+# [0.953.0](https://github.com/lightdash/lightdash/compare/0.952.1...0.953.0) (2024-01-22)
+
+
+### Features
+
+* restrict access to models with required attributes ([#8567](https://github.com/lightdash/lightdash/issues/8567)) ([9d7e67e](https://github.com/lightdash/lightdash/commit/9d7e67ecfe47b71e387681db0490317edf7e6ab3))
+
+## [0.952.1](https://github.com/lightdash/lightdash/compare/0.952.0...0.952.1) (2024-01-22)
+
+
+### Bug Fixes
+
+* add extra scopes env var for okta groups ([#8612](https://github.com/lightdash/lightdash/issues/8612)) ([4541c89](https://github.com/lightdash/lightdash/commit/4541c89864544d5ce27738386eb15ff361cc6826))
+
 # [0.952.0](https://github.com/lightdash/lightdash/compare/0.951.0...0.952.0) (2024-01-22)
 
 

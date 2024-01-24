@@ -158,7 +158,7 @@ const DashboardHeader = ({
                             </ActionIcon>
                         </Popover.Target>
 
-                        <Popover.Dropdown>
+                        <Popover.Dropdown maw={500}>
                             <Stack spacing="xs">
                                 {dashboardDescription && (
                                     <Text fz="xs" color="gray.7" fw={500}>
@@ -241,8 +241,9 @@ const DashboardHeader = ({
                                 disabled={!hasDashboardChanged}
                                 loading={isSaving}
                                 onClick={onSaveDashboard}
+                                color="green.7"
                             >
-                                Save
+                                Save changes
                             </Button>
                         </Box>
                     </Tooltip>
