@@ -13,6 +13,7 @@ type SnowflakeTarget = {
     account: string;
     user: string;
     password?: string;
+    private_key?: string;
     private_key_path?: string;
     private_key_passphrase?: string;
     role?: string;
@@ -42,6 +43,10 @@ const snowflakeSchema: JSONSchemaType<SnowflakeTarget> = {
             type: 'string',
         },
         password: {
+            type: 'string',
+            nullable: true,
+        },
+        private_key: {
             type: 'string',
             nullable: true,
         },
@@ -104,7 +109,7 @@ export const convertSnowflakeSchema = async (
     const validate = ajv.compile<SnowflakeTarget>(snowflakeSchema);
     if (validate(target)) {
         const keyfilePath = target.private_key_path;
-        let privateKey;
+        let privateKey = target.private_key;
         if (keyfilePath) {
             try {
                 privateKey = await fs.readFile(keyfilePath, 'utf8');
